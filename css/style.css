@@ -1,0 +1,265 @@
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#header .head_wrap {
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    z-index: 999;
+}
+
+#header .head_wrap .inner {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .inner h1 {
+    order: 1;
+}
+
+#header .inner h1 a {
+    font-size: 32px;
+    line-height: 40px;
+    font-family: "Pacifico";
+    color: #fff;
+}
+
+#header .inner .hamburger {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    z-index: 9999;
+    font-size: 0;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#header .inner .hamburger::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #fff;
+}
+
+#header .inner .hamburger.on::after {
+    display: none;
+}
+
+#header .inner .hamburger::before {
+    content: "";
+    position: absolute;
+    bottom: 8px;
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #fff;
+}
+
+#header .inner .hamburger.on::before {
+    display: none;
+}
+
+#header .inner .hamburger span::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #fff;
+    transition: 0.2s;
+}
+
+#header .inner .hamburger.on span::after {
+    transform: rotate(135deg);
+}
+
+#header .inner .hamburger span::before {
+    content: "";
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 4px;
+    right: 4px;
+
+    height: 2px;
+    background: #fff;
+    transition: 0.2s;
+}
+
+#header .inner .hamburger.on span::before {
+    transform: rotate(45deg);
+}
+
+#header .gnb {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transform: rotate(0);
+    width: 100%;
+    padding: 48px 10px;
+    backdrop-filter: blur(40px);
+
+    transition: 0.8s;
+    z-index: 998;
+    text-align: center;
+}
+
+#header .gnb.on {
+    top: 80px;
+    z-index: 998;
+    transition: 0.5s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#header .gnb>ul {
+    display: flex;
+    gap: 88px;
+    justify-content: center;
+}
+
+#header .gnb>ul>li>a {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: -1.4px;
+    color: #fff;
+
+    margin-bottom: 12px;
+}
+
+#header .gnb>ul>li>a:hover {
+    color: #FEFAE0;
+}
+
+#header .gnb .sub {
+    display: flex;
+    flex-direction: column;
+}
+
+#header .gnb .sub>li>a {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: -1.2px;
+    color: #fff;
+}
+
+#header .gnb .sub>li>a:hover {
+    color: #FEFAE0;
+}
+
+#header .inner .user {
+    order: 2;
+}
+
+.main_visual {
+    position: relative;
+    height: 100vh;
+}
+
+.main_visual .inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    user-select: none
+}
+
+.main_visual .inner h2 {
+    font-family: "Pacifico";
+    font-size: 96px;
+    line-height: 96px;
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+
+    margin-bottom: 16px;
+}
+
+.main_visual .inner p {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 200;
+    color: #fff;
+    letter-spacing: -1.4px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+    text-align: right;
+}
+
+.main_visual .scroll {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 999;
+}
+
+.main_visual .scroll::before {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 120px;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.main_visual .scroll::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    height: 40px;
+    width: 1px;
+    background: #fff;
+    animation: line 1.5s linear infinite;
+}
+
+@keyframes line {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.main_visual .itm {
+    height: 100vh;
+}
+
+.main_visual .main_visual_slide .itm01 {
+    background: url(../images/main_visual_01.jpg) no-repeat center center/cover;
+}
+
+.main_visual .main_visual_slide .itm02 {
+    background: url(../images/main_visual_02.jpg) no-repeat center center/cover;
+}
+
+
+
+.main_test {
+    height: 100vh;
+}
